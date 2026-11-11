@@ -48,8 +48,8 @@ a{color:inherit}
 .hero{position:relative;height:230vh;background:var(--red-deep)}
 .hero-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .laco-bg{position:absolute;inset:0;overflow:hidden;background:#5a0006}
-.laco-bg::before{content:"";position:absolute;inset:-40px;background:url(img/cortina-laco.jpg) center/cover no-repeat;filter:blur(20px) brightness(.72) saturate(1.1)}
-.laco-bg::after{content:"";position:absolute;inset:0;background:url(img/cortina-laco.jpg) center var(--bgy,0px)/cover no-repeat}
+.laco-bg::before{content:"";position:absolute;inset:-40px;background:url(cortina-laco.jpg) center/cover no-repeat;filter:blur(20px) brightness(.72) saturate(1.1)}
+.laco-bg::after{content:"";position:absolute;inset:0;background:url(cortina-laco.jpg) center var(--bgy,0px)/cover no-repeat}
 .hero-sticky::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 50% 60%,rgba(0,0,0,0) 40%,rgba(30,0,2,.45));pointer-events:none}
 .hero-stage{position:absolute;left:0;right:0;top:var(--stage-top,29%);bottom:8%;display:flex;align-items:flex-start;justify-content:center;z-index:2}
 .hero-sr{position:absolute;display:flex;flex-direction:column;align-items:center;gap:18px;
@@ -73,7 +73,7 @@ a{color:inherit}
 /* ---------- SECTIONS ---------- */
 section.sec{position:relative;padding:110px 0 120px}
 .sec.red{background:var(--red);color:#fff;isolation:isolate}
-.sec.red::before{content:"";position:absolute;inset:0;z-index:-1;background:url(img/damasco.jpg) center/cover no-repeat;mix-blend-mode:multiply;opacity:0}
+.sec.red::before{content:"";position:absolute;inset:0;z-index:-1;background:url(damasco.jpg) center/cover no-repeat;mix-blend-mode:multiply;opacity:0}
 .sec.red.damask::before{opacity:.5}
 .sec.red::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(ellipse at 50% 0%,rgba(255,60,60,.12),transparent 60%),radial-gradient(ellipse at 50% 100%,rgba(0,0,0,.25),transparent 60%);pointer-events:none}
 .sec.off{background-color:var(--off);
@@ -253,7 +253,7 @@ section.sec{position:relative;padding:110px 0 120px}
 .limited{display:inline-block;margin-top:46px;font-family:var(--sans);font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-soft);border:1px solid rgba(226,201,143,.6);border-radius:999px;padding:12px 22px}
 
 /* CTA */
-.cta{position:relative;min-height:100vh;min-height:100svh;background:#000 url(img/cortina-luva.jpg) left center/cover no-repeat;display:flex;align-items:center;color:#fff;overflow:hidden}
+.cta{position:relative;min-height:100vh;min-height:100svh;background:#000 url(cortina-luva.jpg) left center/cover no-repeat;display:flex;align-items:center;color:#fff;overflow:hidden}
 .cta::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.55) 62%,rgba(0,0,0,.85))}
 .cta .wrap{position:relative;display:flex;justify-content:flex-end}
 .cta .box{max-width:460px;text-align:left}
@@ -326,11 +326,11 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 
 <!-- ================= INTRO ================= -->
 <div id="intro">
-  <img class="poster" src="img/cortina-poster.jpg" alt="">
-  <video id="introVideo" src="video/cortina.mp4" muted playsinline preload="auto"></video>
+  <img class="poster" src="cortina-poster.jpg" alt="">
+  <video id="introVideo" src="cortina.mp4" muted playsinline preload="auto"></video>
   <div class="laco laco-bg"></div>
   <button class="gate" id="gate" aria-label="Toque para abrir">
-    <img src="img/logo-sr.png" alt="Sr. Pão de Mel">
+    <img src="logo-sr.png" alt="Sr. Pão de Mel">
     <span class="open">Toque para abrir</span>
     <small>o espetáculo de Natal vai começar</small>
   </button>
@@ -342,10 +342,10 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
     <div class="laco-bg"></div>
     <div class="hero-stage">
       <div class="hero-sr"><div class="inner">
-        <img src="img/logo-sr.png" alt="Sr. Pão de Mel">
+        <img src="logo-sr.png" alt="Sr. Pão de Mel">
         <span class="caps">Apresenta</span>
       </div></div>
-      <div class="hero-natal"><img src="img/logo-natal-claro.png" alt="O Natal mora nos gestos"><span class="caps">Coleção Natal 2026</span></div>
+      <div class="hero-natal"><img src="logo-natal-claro.png" alt="O Natal mora nos gestos"><span class="caps">Coleção Natal 2026</span></div>
     </div>
     <div class="hero-hint"><span class="caps">Role para descobrir</span><div class="line"></div></div>
   </div>
@@ -355,7 +355,7 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 <section class="sec off manifesto" id="manifesto">
   <div class="seal" data-seal></div>
   <div class="wrap">
-    <img class="logo rv" src="img/logo-natal-vermelho.png" alt="O Natal mora nos gestos">
+    <img class="logo rv" src="logo-natal-vermelho.png" alt="O Natal mora nos gestos">
     <p class="rv">Num laço bem dado. Num bilhete escrito à mão. Num doce entregue na hora certa, para a pessoa certa.</p>
     <p class="rv">Da lembrancinha que cabe na palma da mão ao presente que faz alguém parar e sorrir: preparamos opções para cada gesto e cada pessoa da sua lista.</p>
     <span class="caps occasions-lbl rv">Ideal para</span>
@@ -388,7 +388,7 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
     </div>
 
     <article class="feature">
-      <div class="f-media rv"><div class="frame"><img src="img/moca-lata.jpg" alt="Pão de mel Moça na lata" loading="lazy"></div></div>
+      <div class="f-media rv"><div class="frame"><img src="moca-lata.jpg" alt="Pão de mel Moça na lata" loading="lazy"></div></div>
       <div class="f-text rv">
         <span class="caps">Especial de Natal · 700g</span>
         <h3>Pão de mel Moça <em>na lata</em></h3>
@@ -407,7 +407,7 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
     </article>
 
     <article class="feature rev">
-      <div class="f-media rv"><div class="frame"><img src="img/sobremesa.jpg" alt="Sobremesa de pão de mel com frutas vermelhas" loading="lazy"></div></div>
+      <div class="f-media rv"><div class="frame"><img src="sobremesa.jpg" alt="Sobremesa de pão de mel com frutas vermelhas" loading="lazy"></div></div>
       <div class="f-text rv">
         <span class="caps">Nossa clássica de Natal</span>
         <h3>Sobremesa de <em>pão de mel</em></h3>
@@ -425,7 +425,7 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
   <div class="seal" data-seal></div>
   <div class="wrap">
     <article class="feature">
-      <div class="f-media rv"><div class="frame"><img src="img/paes-jesus.jpg" alt="Pães de mel do Sr. Pão de Mel" loading="lazy"></div></div>
+      <div class="f-media rv"><div class="frame"><img src="paes-jesus.jpg" alt="Pães de mel do Sr. Pão de Mel" loading="lazy"></div></div>
       <div class="f-text rv">
         <span class="caps">02 · Pães de Mel</span>
         <h3>O clássico que <em>abraça</em></h3>
@@ -437,11 +437,11 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
     <div class="flavours">
       <div class="rv carousel" id="carousel">
         <div class="frame"><div class="car-track">
-          <img src="img/carr-doce-de-leite.jpg" alt="Pães de mel de doce de leite, chocolate preto e branco" data-cap="Doce de leite · preto e branco">
-          <img src="img/carr-cenoura.jpg" alt="Pão de mel de cenoura" data-cap="Cenoura" loading="lazy">
-          <img src="img/carr-framboesa.jpg" alt="Pão de mel de framboesa" data-cap="Framboesa" loading="lazy">
-          <img src="img/carr-maracuja.jpg" alt="Pão de mel de maracujá" data-cap="Maracujá" loading="lazy">
-          <img src="img/carr-red-velvet.jpg" alt="Pão de mel red velvet" data-cap="Red Velvet" loading="lazy">
+          <img src="carr-doce-de-leite.jpg" alt="Pães de mel de doce de leite, chocolate preto e branco" data-cap="Doce de leite · preto e branco">
+          <img src="carr-cenoura.jpg" alt="Pão de mel de cenoura" data-cap="Cenoura" loading="lazy">
+          <img src="carr-framboesa.jpg" alt="Pão de mel de framboesa" data-cap="Framboesa" loading="lazy">
+          <img src="carr-maracuja.jpg" alt="Pão de mel de maracujá" data-cap="Maracujá" loading="lazy">
+          <img src="carr-red-velvet.jpg" alt="Pão de mel red velvet" data-cap="Red Velvet" loading="lazy">
         </div></div>
         <button class="car-btn car-prev" aria-label="Foto anterior">‹</button>
         <button class="car-btn car-next" aria-label="Próxima foto">›</button>
@@ -480,17 +480,17 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
       <p>Para a equipe, os professores, os vizinhos, os amigos da igreja e todo mundo que fez o seu ano mais doce.</p>
     </div>
     <div class="grid">
-      <div class="card rv"><div class="frame"><img src="img/celofane.jpg" alt="Pão de mel no celofane com tag" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="celofane.jpg" alt="Pão de mel no celofane com tag" loading="lazy"></div>
         <h3>Celofane com tag</h3><p class="desc">Um pão de mel no celofane, com laço vermelho e tag de Natal.</p>
         <div class="price-row"><span class="price"><small>R$</small>13,90</span><a class="btn" data-wa="Pão de mel no celofane com tag (R$ 13,90)">Pedir</a></div></div>
-      <div class="card rv"><div class="frame"><img src="img/saquinho.jpg" alt="Pão de mel no saquinho de tecido" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="saquinho.jpg" alt="Pão de mel no saquinho de tecido" loading="lazy"></div>
         <h3>Saquinho de tecido</h3><p class="desc">Um pão de mel no saquinho listrado, com cordão e tag de Natal.</p>
         <div class="price-row"><span class="price"><small>R$</small>15,90</span><a class="btn" data-wa="Pão de mel no saquinho de tecido (R$ 15,90)">Pedir</a></div></div>
-      <div class="card rv"><div class="frame"><img src="img/bola.jpg" alt="Bola de Natal com pão de mel" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="bola.jpg" alt="Bola de Natal com pão de mel" loading="lazy"></div>
         <h3>Bola de Natal</h3><p class="desc">Um enfeite em formato de bola de Natal com um pão de mel dentro.</p>
         <p class="opts">Doce de leite ou Brigadeiro 70%</p>
         <div class="price-row"><span class="price"><small>R$</small>19,90</span><a class="btn" data-wa="Bola de Natal com 1 pão de mel (R$ 19,90)">Pedir</a></div></div>
-      <div class="card rv"><div class="frame"><img src="img/arvore.jpg" alt="Árvore de Natal com pão de mel" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="arvore.jpg" alt="Árvore de Natal com pão de mel" loading="lazy"></div>
         <h3>Árvore de Natal</h3><p class="desc">Um enfeite em formato de árvore, com fita para pendurar e um pão de mel dentro.</p>
         <p class="opts">Doce de leite ou Brigadeiro 70%</p>
         <div class="price-row"><span class="price"><small>R$</small>19,90</span><a class="btn" data-wa="Árvore de Natal com 1 pão de mel (R$ 19,90)">Pedir</a></div></div>
@@ -508,13 +508,13 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
       <p>Pães de mel em embalagens pensadas para serem abertas devagar.</p>
     </div>
     <div class="grid">
-      <div class="card rv"><div class="frame"><img src="img/caixinha-correio.jpg" alt="Caixinha correio" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="caixinha-correio.jpg" alt="Caixinha correio" loading="lazy"></div>
         <h3>Caixinha correio</h3><p class="desc">Uma caixinha “Para alguém especial” com 2 pães de mel.</p>
         <div class="price-row"><span class="price"><small>R$</small>29,90</span><a class="btn" data-wa="Caixinha correio com 2 pães de mel (R$ 29,90)">Pedir</a></div></div>
-      <div class="card rv"><div class="frame"><img src="img/cachepot.jpg" alt="Cachepot com pães de mel" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="cachepot.jpg" alt="Cachepot com pães de mel" loading="lazy"></div>
         <h3>Cachepot</h3><p class="desc">Cachepot de tecido listrado com 5 pães de mel e a tag “esta é a razão”.</p>
         <div class="price-row"><span class="price"><small>R$</small>69,90</span><a class="btn" data-wa="Cachepot com 5 pães de mel (R$ 69,90)">Pedir</a></div></div>
-      <div class="card rv"><div class="frame"><img src="img/caixas.jpg" alt="Caixas com pães de mel" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="caixas.jpg" alt="Caixas com pães de mel" loading="lazy"></div>
         <h3>Caixas com visor</h3><p class="desc">Caixas brancas com laço de cetim e tag de Natal.</p>
         <ul class="plist">
           <li>4 pães de mel<span class="dots"></span><b>R$ 59,90</b></li>
@@ -526,9 +526,9 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 
     <article class="feature" style="margin-top:110px">
       <div class="f-media rv"><div class="lata-gal">
-        <button class="frame zoom" data-full="img/latas-trio-hd.jpg"><img src="img/latas-trio.jpg" alt="Latas de Natal empilhadas" loading="lazy"></button>
-        <button class="frame zoom" data-full="img/lata-quebranozes-hd.jpg"><img src="img/lata-quebranozes.jpg" alt="Lata quebra-nozes" loading="lazy"></button>
-        <button class="frame zoom" data-full="img/lata-noel-hd.jpg"><img src="img/lata-noel.jpg" alt="Lata Papai Noel" loading="lazy"></button>
+        <button class="frame zoom" data-full="latas-trio-hd.jpg"><img src="latas-trio.jpg" alt="Latas de Natal empilhadas" loading="lazy"></button>
+        <button class="frame zoom" data-full="lata-quebranozes-hd.jpg"><img src="lata-quebranozes.jpg" alt="Lata quebra-nozes" loading="lazy"></button>
+        <button class="frame zoom" data-full="lata-noel-hd.jpg"><img src="lata-noel.jpg" alt="Lata Papai Noel" loading="lazy"></button>
       </div><p class="zoom-hint caps">Toque para ampliar</p></div>
       <div class="f-text rv">
         <span class="caps">Lata de Natal</span>
@@ -553,8 +553,8 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 
     <article class="feature">
       <div class="f-media stack rv">
-        <div class="frame"><img src="img/chocottone-corte.jpg" alt="Chocottone cortado com doce de leite" loading="lazy"></div>
-        <div class="frame small"><img src="img/chocottone-grande.jpg" alt="Chocottone grande embalado" loading="lazy"></div>
+        <div class="frame"><img src="chocottone-corte.jpg" alt="Chocottone cortado com doce de leite" loading="lazy"></div>
+        <div class="frame small"><img src="chocottone-grande.jpg" alt="Chocottone grande embalado" loading="lazy"></div>
       </div>
       <div class="f-text rv">
         <span class="caps">Aproximadamente 750g</span>
@@ -567,8 +567,8 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 
     <article class="feature rev">
       <div class="f-media stack rv">
-        <div class="frame"><img src="img/mini-treno.jpg" alt="Mini chocottones" loading="lazy"></div>
-        <div class="frame small"><img src="img/mini-celofane.jpg" alt="Mini chocottone no celofane" loading="lazy"></div>
+        <div class="frame"><img src="mini-treno.jpg" alt="Mini chocottones" loading="lazy"></div>
+        <div class="frame small"><img src="mini-celofane.jpg" alt="Mini chocottone no celofane" loading="lazy"></div>
       </div>
       <div class="f-text rv">
         <span class="caps">120g · Celofane com tag</span>
@@ -580,7 +580,7 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
     </article>
 
     <article class="feature">
-      <div class="f-media rv"><div class="frame"><img src="img/bites.jpg" alt="Chocottone bites" loading="lazy"></div></div>
+      <div class="f-media rv"><div class="frame"><img src="bites.jpg" alt="Chocottone bites" loading="lazy"></div></div>
       <div class="f-text rv">
         <span class="caps">Especial · 200g</span>
         <h3>Chocottone <em>bites</em></h3>
@@ -602,7 +602,7 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
       <p>Para completar a cesta, a ceia ou a meia pendurada na árvore.</p>
     </div>
     <div class="grid two">
-      <div class="card rv"><div class="frame"><img src="img/brownie.jpg" alt="Brownie com embalagem de Natal" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="brownie.jpg" alt="Brownie com embalagem de Natal" loading="lazy"></div>
         <h3>Brownies de Natal</h3><p class="desc">Casquinha crocante, miolo úmido e embalagem especial do Papai Noel de pijama.</p>
         <ul class="plist">
           <li>Tradicional · 70g<span class="dots"></span><b>R$ 12,90</b></li>
@@ -611,18 +611,18 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
           <li>Ovomaltine · 90g<span class="dots"></span><b>R$ 17,90</b></li>
         </ul>
         <div class="price-row"><span class="note" style="margin:0">Escolha o sabor</span><a class="btn" data-wa="Brownie de Natal">Pedir</a></div></div>
-      <div class="card rv"><div class="frame"><img src="img/trufas.jpg" alt="Trufas" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="trufas.jpg" alt="Trufas" loading="lazy"></div>
         <h3>Trufas</h3><p class="desc">Ganache cremosa, polvilhada com cacau. Daquelas que derretem antes da segunda mordida.</p>
         <ul class="plist">
           <li>Trufas ao leite<span class="dots"></span><b>R$ 24,90</b></li>
           <li>Trufas 70%<span class="dots"></span><b>R$ 26,90</b></li>
         </ul>
         <div class="price-row"><span class="note" style="margin:0">Pacote</span><a class="btn" data-wa="Trufas">Pedir</a></div></div>
-      <div class="card rv"><div class="frame"><img src="img/barra-cookie.jpg" alt="Barra cookie" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="barra-cookie.jpg" alt="Barra cookie" loading="lazy"></div>
         <h3>Barra Cookie</h3><p class="desc">Dois clássicos numa barra só: chocolate com pedaços de cookie de verdade.</p>
         <p class="opts">50g · unidade</p>
         <div class="price-row"><span class="price"><small>R$</small>12,90</span><a class="btn" data-wa="Barra Cookie (R$ 12,90)">Pedir</a></div></div>
-      <div class="card rv"><div class="frame"><img src="img/canudinhos.jpg" alt="Canudinhos de chocolate" loading="lazy"></div>
+      <div class="card rv"><div class="frame"><img src="canudinhos.jpg" alt="Canudinhos de chocolate" loading="lazy"></div>
         <h3>Canudinhos</h3><p class="desc">Canudinhos crocantes banhados no chocolate.</p>
         <p class="opts">Pacote de 60g</p>
         <div class="price-row"><span class="price"><small>R$</small>16,90</span><a class="btn" data-wa="Canudinhos 60g (R$ 16,90)">Pedir</a></div></div>
@@ -669,7 +669,7 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
       WhatsApp: <a data-wa="" data-phone-link></a><br>
       Instagram: <a data-insta></a>
     </div>
-    <div class="center"><img src="img/logo-natal-vermelho.png" alt="O Natal mora nos gestos"></div>
+    <div class="center"><img src="logo-natal-vermelho.png" alt="O Natal mora nos gestos"></div>
     <div class="side right">
       <span class="caps">Onde estamos</span>
       <a data-endereco target="_blank" rel="noopener"></a><br>
@@ -681,13 +681,13 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 <div class="sign">
   <a href="https://instagram.com/edhen.studiobrand" target="_blank" rel="noopener">
     <span class="caps">Feito por</span>
-    <img src="img/edhen.png" alt="Studio Edhen">
+    <img src="edhen.png" alt="Studio Edhen">
     <span class="handle">@edhen.studiobrand</span>
   </a>
 </div>
 
 <button class="music paused" id="musicBtn" aria-label="Ligar ou desligar música"><span class="bars"><i></i><i></i><i></i></span></button>
-<audio id="music" src="audio/musica.mp3" loop preload="none"></audio>
+<audio id="music" src="musica.mp3" loop preload="none"></audio>
 <div class="lightbox" id="lightbox"><img alt=""><button class="lb-close" aria-label="Fechar">×</button><button class="lb-prev" aria-label="Anterior">‹</button><button class="lb-next" aria-label="Próxima">›</button></div>
 <a class="wa-float" data-wa="" aria-label="Pedir pelo WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.3 8.7 3.3 15.7c0 2.3.6 4.5 1.8 6.4L3 29l7.1-2c1.8 1 3.9 1.5 5.9 1.5 7 0 12.7-5.7 12.7-12.7S23 3 16 3zm0 23.2c-1.9 0-3.8-.5-5.4-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4c-1.1-1.7-1.6-3.6-1.6-5.5C5.2 9.8 10 5 16 5s10.8 4.8 10.8 10.7S21.9 26.2 16 26.2zm5.9-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7 0c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8s1.2 3.2 1.4 3.5c.2.2 2.4 3.7 5.8 5.1 2.9 1.1 3.4.9 4 .8.6-.1 1.9-.8 2.2-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>
@@ -740,21 +740,21 @@ document.querySelectorAll('[data-horario]').forEach(e=>e.textContent=CONFIG.hora
 const sealSVG = `<div class="disc"></div>
 <svg viewBox="0 0 128 128" aria-hidden="true"><defs><path id="c" d="M64,64 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0"/></defs>
 <text><textPath href="#c">O Natal mora nos gestos ✦ Sr. Pão de Mel ✦ Natal 2026 ✦</textPath></text></svg>
-<div class="ring"><img src="img/logo-sr-red.png" alt=""></div>`;
+<div class="ring"><img src="logo-sr-red.png" alt=""></div>`;
 document.querySelectorAll('[data-seal]').forEach(s=>{
   s.innerHTML = sealSVG;
-  s.querySelector('.ring img').src = s.classList.contains('on-red') ? 'img/logo-sr-gold.png' : 'img/logo-sr-red.png';
+  s.querySelector('.ring img').src = s.classList.contains('on-red') ? 'logo-sr-gold.png' : 'logo-sr-red.png';
 });
 
 /* Kits shelf */
 const KITS = [
-  {id:'listrada', nome:'Caixa listrada', em:'listrada', img:'img/kit-listrada.jpg', preco:'139,90',
+  {id:'listrada', nome:'Caixa listrada', em:'listrada', img:'kit-listrada.jpg', preco:'139,90',
    itens:['2 barrinhas de chocolate','1 pacote de canudinhos de chocolate','1 brownie recheado','2 pães de mel','1 La Maria','1 La Sra','1 pacote de trufas']},
-  {id:'correio', nome:'Caixa correio', em:'correio', img:'img/kit-correio.jpg', preco:'109,90',
+  {id:'correio', nome:'Caixa correio', em:'correio', img:'kit-correio.jpg', preco:'109,90',
    itens:['1 barra cookie','1 saquinho de trufas','3 pães de mel','1 bombom de cereja','1 La Sra']},
-  {id:'glori', nome:'Caixa cartonada com Glori', em:'Glori', img:'img/kit-glori.jpg', preco:'179,90',
+  {id:'glori', nome:'Caixa cartonada com Glori', em:'Glori', img:'kit-glori.jpg', preco:'179,90',
    itens:['1 Glori, bebida sem álcool para brindar','1 lata com chocottone bites']},
-  {id:'cesta', nome:'Cesta cartonada especial', em:'especial', img:'img/kit-cesta.jpg', preco:'295,90',
+  {id:'cesta', nome:'Cesta cartonada especial', em:'especial', img:'kit-cesta.jpg', preco:'295,90',
    itens:['1 mini chocottone','1 caixa com 6 pães de mel','1 pacote de canudinhos','1 saquinho de trufas','1 brownie','1 barrinha cookie','2 barras soft com nuts','1 Glori']}
 ];
 const shelf = document.getElementById('shelf'), detail = document.getElementById('kitDetail');
@@ -823,7 +823,7 @@ lb.querySelector('.lb-next').onclick=e=>{e.stopPropagation();lbShow(zi+1)};
 lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
 addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowRight')lbShow(zi+1);if(e.key==='ArrowLeft')lbShow(zi-1)});
 
-/* Música: toca a partir do "toque para abrir" (arquivo audio/musica.mp3) */
+/* Música: toca a partir do "toque para abrir" (arquivo musica.mp3) */
 const music=document.getElementById('music'), musicBtn=document.getElementById('musicBtn');
 music.volume=.55;
 music.addEventListener('canplay',()=>musicBtn.classList.add('ready'));
