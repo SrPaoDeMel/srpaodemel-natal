@@ -20,6 +20,9 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font-family:var(--serif);color:var(--ink);background:var(--red-deep);overflow-x:hidden}
+@supports (overflow:clip){body{overflow-x:clip}}
+.grid>*,.feature>*,.flavours>*,.kit-detail>*,.lata-gal>*,.f-text,.f-media,.card,.carousel,.shelf-wrap,.wrap{min-width:0}
+.plist li{min-width:0}.plist li span:first-child{min-width:0}
 body.locked{overflow:hidden;height:100vh}
 img{display:block;max-width:100%}
 a{color:inherit}
@@ -71,7 +74,7 @@ a{color:inherit}
 .hero-hint{visibility:hidden}.revealed .hero-hint{visibility:visible}
 
 /* ---------- SECTIONS ---------- */
-section.sec{position:relative;padding:110px 0 120px}
+section.sec{position:relative;padding:110px 0 120px;overflow-x:clip}
 .sec.red{background:var(--red);color:#fff;isolation:isolate}
 .sec.red::before{content:"";position:absolute;inset:0;z-index:-1;background:url(damasco.jpg) center/cover no-repeat;mix-blend-mode:multiply;opacity:0}
 .sec.red.damask::before{opacity:.5}
@@ -89,12 +92,12 @@ section.sec{position:relative;padding:110px 0 120px}
 .sec.red .sec-head p{color:rgba(255,255,255,.82)}
 
 /* frame + cards */
-.frame{position:relative;padding:8px;border:1px solid rgba(201,164,92,.55);background:rgba(255,255,255,.35)}
+.frame{position:relative;--pad:8px;padding:var(--pad);border:1px solid rgba(201,164,92,.55);background:rgba(255,255,255,.35);overflow:hidden;min-width:0;width:100%}
 .sec.red .frame{background:rgba(255,255,255,.06);border-color:rgba(226,201,143,.45)}
-.frame img{width:100%;height:100%;object-fit:cover}
-.grid{display:grid;gap:44px 34px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.grid.two{grid-template-columns:repeat(2,1fr);max-width:900px;margin-inline:auto}
-@media(max-width:700px){.grid.two{grid-template-columns:1fr}}
+.frame > img{position:absolute;top:var(--pad);left:var(--pad);width:calc(100% - 2*var(--pad));height:calc(100% - 2*var(--pad));max-width:none;object-fit:cover}
+.grid{display:grid;gap:44px 34px;grid-template-columns:repeat(auto-fit,minmax(min(250px,100%),1fr))}
+.grid.two{grid-template-columns:repeat(2,minmax(0,1fr));width:100%;max-width:900px;margin-left:auto;margin-right:auto;justify-content:center}
+@media(max-width:700px){.grid.two{grid-template-columns:minmax(0,1fr)}}
 .card{display:flex;flex-direction:column}
 .card .frame{aspect-ratio:4/5}
 .card h3{font-weight:500;font-size:25px;line-height:1.1;margin:22px 0 8px}
@@ -121,12 +124,12 @@ section.sec{position:relative;padding:110px 0 120px}
 .sec.red .plist li b{color:#fff}
 
 /* feature (big two-col) */
-.feature{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center}
 .feature + .feature{margin-top:110px}
 .feature.rev .f-media{order:2}
 .f-media .frame{aspect-ratio:4/5}
 .f-media.stack{position:relative}
-.f-media.stack .frame.small{position:absolute;width:46%;aspect-ratio:3/4;right:-26px;bottom:-40px;box-shadow:0 20px 50px rgba(0,0,0,.35);background:var(--off)}
+.f-media.stack .frame.small{position:absolute;width:46%;aspect-ratio:3/4;right:-14px;bottom:-40px;box-shadow:0 20px 50px rgba(0,0,0,.35);background:var(--off)}
 .sec.red .f-media.stack .frame.small{background:var(--red)}
 .f-text .caps{color:var(--gold)}
 .sec.red .f-text .caps{color:var(--gold-soft)}
@@ -154,8 +157,8 @@ section.sec{position:relative;padding:110px 0 120px}
 /* carrossel */
 .carousel{position:relative}
 .carousel .frame{aspect-ratio:4/5;overflow:hidden}
-.car-track{display:flex;height:100%;transition:transform .6s cubic-bezier(.2,.8,.2,1);touch-action:pan-y}
-.car-track img{flex:0 0 100%;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.car-track{position:absolute;top:var(--pad);left:var(--pad);right:var(--pad);bottom:var(--pad);display:flex;transition:transform .6s cubic-bezier(.2,.8,.2,1);touch-action:pan-y}
+.car-track img{flex:0 0 100%;min-width:0;width:100%;height:100%;max-width:none;object-fit:cover;user-select:none;-webkit-user-drag:none}
 .car-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.7);
   background:rgba(122,3,9,.55);backdrop-filter:blur(4px);color:#fff;font-family:var(--serif);font-size:24px;line-height:1;cursor:pointer;z-index:2;transition:.25s}
 .car-btn:hover{background:var(--red)}
@@ -181,6 +184,7 @@ section.sec{position:relative;padding:110px 0 120px}
 
 /* manifesto */
 .manifesto{text-align:center;padding:130px 0 120px}
+.manifesto.has-inside-seal{padding-top:210px}
 .manifesto img.logo{width:min(40vw,170px);margin:0 auto 30px}
 .manifesto p{font-size:clamp(17px,2vw,19px);line-height:1.65;max-width:600px;margin:0 auto 14px;color:var(--ink-soft)}
 .occasions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;max-width:640px;margin:30px auto 0}
@@ -201,7 +205,7 @@ section.sec{position:relative;padding:110px 0 120px}
 .chips a.active,.chips a:hover{background:var(--red);color:#fff;border-color:var(--red)}
 
 /* flavours */
-.flavours{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;margin-top:110px}
+.flavours{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start;margin-top:110px}
 .flavours .frame{aspect-ratio:4/5}
 .fl-group + .fl-group{margin-top:40px}
 .fl-group .caps{color:var(--gold);display:flex;justify-content:space-between}
@@ -212,11 +216,12 @@ section.sec{position:relative;padding:110px 0 120px}
 .note{font-family:var(--sans);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);margin-top:22px;line-height:1.8}
 
 /* gallery latas */
-.lata-gal{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.lata-gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .lata-gal .frame{aspect-ratio:3/4}
 .zoom{cursor:zoom-in;font:inherit;color:inherit;display:block;width:100%}
 .zoom img{transition:transform .5s}.zoom:hover img{transform:scale(1.04)}
-.zoom-hint{text-align:center;margin-top:14px;color:var(--gold);font-size:10px}
+.lata-gal{align-items:start}
+.zoom-hint{text-align:center;margin-top:30px;display:block;clear:both;color:var(--gold);font-size:10px}
 .lightbox{position:fixed;inset:0;z-index:200;background:rgba(20,0,2,.94);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s}
 .lightbox.open{opacity:1;pointer-events:auto}
 .lightbox img{max-width:92vw;max-height:86vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:scale(.94);transition:transform .4s}
@@ -230,13 +235,13 @@ section.sec{position:relative;padding:110px 0 120px}
 .shelf::after{content:"";position:absolute;left:0;right:0;bottom:-14px;height:14px;background:linear-gradient(#B48A45,#7c5a23);border-radius:2px;box-shadow:0 14px 30px rgba(0,0,0,.35)}
 .kit{position:relative;flex:0 1 200px;height:100%;border:0;background:none;cursor:pointer;transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .4s;transform-origin:bottom center;padding:0}
 .kit:nth-child(2){height:88%}.kit:nth-child(3){height:94%}.kit:nth-child(4){height:84%}
-.kit .frame{height:100%;padding:5px;background:rgba(255,255,255,.08)}
+.kit .frame{height:100%;--pad:5px;background:rgba(255,255,255,.08)}
 .kit .lbl{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);font-family:var(--sans);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
   white-space:nowrap;color:#fff;background:rgba(122,3,9,.82);padding:7px 11px;border-radius:999px}
 .shelf.has-active .kit{filter:brightness(.6) saturate(.8)}
 .shelf .kit.active{filter:none;transform:translateY(-16px) scale(1.06)}
 .shelf-hint{text-align:center;color:var(--gold-soft);margin-top:42px}
-.kit-detail{margin-top:56px;display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center;background:var(--off);color:var(--ink);padding:26px;border-radius:4px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.kit-detail{margin-top:56px;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:54px;align-items:center;background:var(--off);color:var(--ink);padding:26px;border-radius:4px;box-shadow:0 30px 60px rgba(0,0,0,.25)}
 .kit-detail .frame{aspect-ratio:4/5;background:#fff}
 .kit-detail h3{font-weight:500;font-size:clamp(32px,4vw,46px);line-height:1.05;margin:10px 0 18px}
 .kit-detail h3 em{font-style:italic;color:var(--red)}
@@ -303,12 +308,12 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 
 @media (max-width:860px){
   section.sec{padding:90px 0 96px}
-  .feature,.flavours,.kit-detail{grid-template-columns:1fr;gap:34px}
+  .feature,.flavours,.kit-detail{grid-template-columns:minmax(0,1fr);gap:34px}
   .feature.rev .f-media{order:0}
   .feature + .feature{margin-top:90px}
   .f-media.stack .frame.small{right:-8px;bottom:-26px;width:42%}
   .f-media.stack{margin-bottom:26px}
-  .foot{grid-template-columns:1fr;text-align:center}
+  .foot{grid-template-columns:minmax(0,1fr);text-align:center}
   .foot .left,.foot .right{text-align:center}
   .foot img{margin:0 auto}
   .foot .center{order:-1}
@@ -355,8 +360,8 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 </header>
 
 <!-- ================= MANIFESTO ================= -->
-<section class="sec off manifesto" id="manifesto">
-  <div class="seal" data-seal></div>
+<section class="sec off manifesto has-inside-seal" id="manifesto">
+  <div class="seal inside" data-seal></div>
   <div class="wrap">
     <img class="logo rv" src="logo-natal-vermelho.png" alt="O Natal mora nos gestos">
     <p class="rv">Num laço bem dado. Num bilhete escrito à mão. Num doce entregue na hora certa, para a pessoa certa.</p>
@@ -440,11 +445,11 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
     <div class="flavours">
       <div class="rv carousel" id="carousel">
         <div class="frame"><div class="car-track">
-          <img src="carr-doce-de-leite.jpg" alt="Pães de mel de doce de leite, chocolate preto e branco" data-cap="Doce de leite · preto e branco">
+          <img src="carr-red-velvet.jpg" alt="Pão de mel red velvet" data-cap="Red Velvet">
+          <img src="carr-doce-de-leite.jpg" alt="Pães de mel de doce de leite, chocolate preto e branco" data-cap="Doce de leite · preto e branco" loading="lazy">
           <img src="carr-cenoura.jpg" alt="Pão de mel de cenoura" data-cap="Cenoura" loading="lazy">
           <img src="carr-framboesa.jpg" alt="Pão de mel de framboesa" data-cap="Framboesa" loading="lazy">
           <img src="carr-maracuja.jpg" alt="Pão de mel de maracujá" data-cap="Maracujá" loading="lazy">
-          <img src="carr-red-velvet.jpg" alt="Pão de mel red velvet" data-cap="Red Velvet" loading="lazy">
         </div></div>
         <button class="car-btn car-prev" aria-label="Foto anterior">‹</button>
         <button class="car-btn car-next" aria-label="Próxima foto">›</button>
@@ -529,9 +534,9 @@ footer{background:var(--off);padding:70px 0 34px;border-top:4px solid var(--red)
 
     <article class="feature" style="margin-top:110px">
       <div class="f-media rv"><div class="lata-gal">
-        <button class="frame zoom" data-full="latas-trio-hd.jpg"><img src="latas-trio.jpg" alt="Latas de Natal empilhadas" loading="lazy"></button>
-        <button class="frame zoom" data-full="lata-quebranozes-hd.jpg"><img src="lata-quebranozes.jpg" alt="Lata quebra-nozes" loading="lazy"></button>
-        <button class="frame zoom" data-full="lata-noel-hd.jpg"><img src="lata-noel.jpg" alt="Lata Papai Noel" loading="lazy"></button>
+        <div class="frame zoom" role="button" tabindex="0" data-full="latas-trio-hd.jpg"><img src="latas-trio.jpg" alt="Latas de Natal empilhadas" loading="lazy"></div>
+        <div class="frame zoom" role="button" tabindex="0" data-full="lata-quebranozes-hd.jpg"><img src="lata-quebranozes.jpg" alt="Lata quebra-nozes" loading="lazy"></div>
+        <div class="frame zoom" role="button" tabindex="0" data-full="lata-noel-hd.jpg"><img src="lata-noel.jpg" alt="Lata Papai Noel" loading="lazy"></div>
       </div><p class="zoom-hint caps">Toque para ampliar</p></div>
       <div class="f-text rv">
         <span class="caps">Lata de Natal</span>
@@ -819,7 +824,7 @@ video.addEventListener('error', ()=>{ if(intro.classList.contains('playing')) fi
 /* Lightbox latas */
 const lb=document.getElementById('lightbox'), lbImg=lb.querySelector('img'), zooms=[...document.querySelectorAll('.zoom')]; let zi=0;
 function lbShow(i){zi=(i+zooms.length)%zooms.length;lbImg.src=zooms[zi].dataset.full;lb.classList.add('open')}
-zooms.forEach((z,i)=>z.addEventListener('click',()=>lbShow(i)));
+zooms.forEach((z,i)=>{z.addEventListener('click',()=>lbShow(i));z.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();lbShow(i)}})});
 lb.querySelector('.lb-close').onclick=()=>lb.classList.remove('open');
 lb.querySelector('.lb-prev').onclick=e=>{e.stopPropagation();lbShow(zi-1)};
 lb.querySelector('.lb-next').onclick=e=>{e.stopPropagation();lbShow(zi+1)};
